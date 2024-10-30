@@ -299,6 +299,11 @@ let tree: [Int: (Int?, Int?)] = [:]
 
    <br/>
 
+## 추천 문제
+
+- [BOJ 1991(트리 순회)](https://www.acmicpc.net/problem/1991)
+- [BOJ 11725(트리의 부모 찾기)](https://www.acmicpc.net/problem/11725)
+
 ## 참고
 
 - [블로그 참조 - 개발자소들이(BST1)](https://babbab2.tistory.com/90)
