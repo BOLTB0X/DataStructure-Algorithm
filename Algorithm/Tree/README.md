@@ -303,6 +303,7 @@ let tree: [Int: (Int?, Int?)] = [:]
 
 - [BOJ 1991(트리 순회)](https://www.acmicpc.net/problem/1991)
 - [BOJ 11725(트리의 부모 찾기)](https://www.acmicpc.net/problem/11725)
+- [BOJ 1068(트리)](https://www.acmicpc.net/problem/1068)
 
 ## 참고
 
