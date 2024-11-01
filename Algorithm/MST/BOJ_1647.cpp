@@ -13,11 +13,9 @@ void input(void) {
 
     for (int i = 0; i < M; ++i) {
         int a, b, c;
-
         cin >> a >> b >> c;
-        edges.push_back({c, { a, b }});
+        edges.push_back({c, {a, b}});
     }
-
     return;
 }
 
@@ -26,40 +24,40 @@ int find_parents(int x) {
     return parents[x] = find_parents(parents[x]);
 }
 
-void unite_parents(int x, int y) {
+void union_parenets(int x, int y) {
     x = find_parents(x);
     y = find_parents(y);
 
-    if (x != y) {
-        if (x < y)
-            parents[y] = x;
-        else
-            parents[x] = y;
-    }
-
+    if (x < y) parents[y] = x;
+    else parents[x] = y;
     return;
 }
 
+bool is_cycle(int x, int y) {
+    x = find_parents(x);
+    y = find_parents(y);
+
+    return x == y;
+}
+
 int solution(void) {
-    int answer = 0;
+    int total_cost = 0, max_cost = -1;
 
-    parents = vector<int>(N+1, 0);
-    for (int i = 0; i <= N; ++i) parents[i] = i;
+    for (int i = 0; i <= N; ++i)
+        parents.push_back(i);
 
-    sort(edges.begin(), edges.end());
+    sort(edges.begin(),edges.end());
 
     for (const auto edge: edges) {
-        int cost = edge.first;
-        int from = edge.second.first;
-        int to = edge.second.second;
-
-        if (find_parents(from) != find_parents(to)) {
-            unite_parents(from, to);
-            answer += cost;
+        if (!is_cycle(edge.second.first, edge.second.second)) {
+            total_cost += edge.first;
+            union_parenets(edge.second.first, edge.second.second);
+            max_cost = max_cost > edge.first ? max_cost : edge.first;
         }
     }
 
-    return answer;
+    //cout << max_cost << '\n';
+    return total_cost - max_cost;
 }
 
 int main(void) {
