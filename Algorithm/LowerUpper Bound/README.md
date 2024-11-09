@@ -132,6 +132,10 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
 
 _start를 반환하는 것이 더 일반적_
 
+## 연습문제
+
+- [BOJ-2632](https://www.acmicpc.net/problem/2632)
+
 ## 참고
 
 - [블로그 참조 - 12bme(Lower bound, Upper bound)](https://12bme.tistory.com/120)
