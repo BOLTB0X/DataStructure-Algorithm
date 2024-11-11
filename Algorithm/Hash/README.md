@@ -25,6 +25,10 @@
 > 각각의 문자(char), 문자열(String)에 대해서, 유일한 Key 값을 가지게 하며
 > 만들어진 Key 값을 이용해서 자료에 접근한다면 O(1) 시간만에 접근 가능
 
+<div style="text-align: center;">
+    <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/Hash/hash.png?raw=true" alt="Example Image" width="90%">
+</div>
+
 <br/>
 
 - **hash 함수** 에 의해 `key` -> `index` 로 변환
