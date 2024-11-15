@@ -156,6 +156,8 @@ apple : 10
 
 ## 연습하기 좋은 문제
 
+- [고득점kit-완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+
 - [고득점kit-베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
 
 ## 참고
