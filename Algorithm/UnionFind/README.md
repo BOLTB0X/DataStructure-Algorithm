@@ -43,12 +43,29 @@
 
 각 노드의 `parents` 배열의 값은 그 노드가 가르키는 노드로 바꿔주는 과정
 
+<br/>
+
+<div style="text-align: center;">
+<img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/UnionFind/img/%EB%B6%80%EB%AA%A8-%EB%B0%B0%EC%97%B4.png?raw=true" alt="Example Image" width="90%">
+
+ex) parents 배열
+
+</div>
+<br/>
+
 - `Find`
 
   - 요소가 속한 **대표 노드(루트)** 를 찾는 function
   - **경로 압축(Path Compression)** 을 통해, 트리 구조를 평탄화
 
   <br/>
+
+  <div style="text-align: center;">
+  <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/UnionFind/img/find%20%EA%B3%BC%EC%A0%95.png?raw=true" alt="Example Image" width="90%">
+
+  ex) Find 과정
+
+  </div>
 
   ```cpp
   int Find(int x)
@@ -85,6 +102,13 @@
       return;
   }
   ```
+
+    <div style="text-align: center;">
+  <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/UnionFind/img/%EC%9C%A0%EB%8B%88%EC%98%A8.png?raw=true" alt="Example Image" width="90%">
+
+  ex) Union 결과 (특정 노드로 묶임)
+
+  </div>
 
   <br/>
 
