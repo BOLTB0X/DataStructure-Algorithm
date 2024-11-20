@@ -10,6 +10,10 @@
 
 <br/>
 
+<div style="text-align: center;">
+  <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/MST/img/%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC.png?raw=true" alt="Example Image" width="90%">
+</div>
+
 - **정의**
 
   - Spanning Tree는 그래프의 최소 연결 부분 그래프
@@ -26,6 +30,12 @@
     <br/>
 
 ## Minimum Spanning Tree(최소 신장트리)
+
+<div style="text-align: center;">
+  <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/MST/img/%EC%B5%9C%EC%86%8C%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC.png?raw=true" alt="Example Image" width="90%">
+</div>
+
+<br/>
 
 - **정의**
   가중치 그래프에서 모든 정점을 연결하면서 가중치의 합이 최소가 되는 트리 구조
