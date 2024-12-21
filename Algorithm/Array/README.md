@@ -2,6 +2,8 @@
 
 > 컴퓨터 과학에서 배열은 번호와 번호에 대응하는 데이터들로 이루어진 자료 구조를 나타낸다.
 
+<br/>
+
 **Array(배열) == Sequential List(순차 리스트)**, 연속적인 메모리 위치의 집합이라고 정의되어짐
 
 <br/>
@@ -16,7 +18,13 @@
 
 배열 내 각 요소는 고유한 인덱스(숫자로 나타냄)를 가지며, 이 인덱스를 사용하여 해당 요소에 접근하는 것
 
+```c
+// c
+int arr[5]
+```
+
 ```swift
+// swift
 @frozen
 struct Array<Element>
 ```
@@ -69,6 +77,7 @@ struct Array<Element>
 - **Create/Init(생성)**
 
   ```swift
+  // swift
   var arr: [Int] = [38, 57, 50, 84, 28, 49, 80, 36, 82, 7, 7, 43, 12, 15, 38, 79]
 
   print(arr)
@@ -81,6 +90,7 @@ struct Array<Element>
 - **Read(읽기)**
 
   ```swift
+  // swift
   print("index 2인 요소: \(arr[2])")
   //배열의 요소 index로 Read
   //index 2인 요소: 50
@@ -114,6 +124,7 @@ struct Array<Element>
   - **append**(맨 뒤 추가)
 
     ```swift
+    // swift
     arr.append(60)
     print(arr)
     // 배열 끝에 요소 추가(Append)
@@ -125,6 +136,7 @@ struct Array<Element>
   - **insert**(특정 index 위치 추가)
 
     ```swift
+    // swift
     arr.insert(5, at: 2)
     print(arr)
     // 배열의 특정 위치에 요소 삽입(인덱스 2에 5 Insert)
@@ -135,6 +147,7 @@ struct Array<Element>
 
   - **Update**(요소 인덱스로 접근하여 수정)
     ```swift
+    // swift
     arr[1] = 15
     print(arr)
     // 배열 요소를(arr[1] = 15) 교체 (Update)
@@ -147,6 +160,7 @@ struct Array<Element>
   - **remove**(특정 위치 삭제)
 
     ```swift
+    // swift
     arr.remove(at: 8)
     print(arr)
     //특정 인덱스 8의 요소 Delete
@@ -158,6 +172,7 @@ struct Array<Element>
   - **removeLast**(마지막 요소 삭제)
 
     ```swift
+    // swift
     arr.removeLast()
     print(arr)
     // 배열의 마지막 요소 Delete
@@ -169,6 +184,7 @@ struct Array<Element>
   - **removeFirst**(배열의 첫번쨰 요소 삭제)
 
     ```swift
+    // swift
     arr.removeFirst()
     print(arr)
     // 배열의 첫번쨰 요소 Delete
@@ -180,6 +196,7 @@ struct Array<Element>
   - **firstIndex**(첫번쨰 인덱스(0)으로 부터 요소(of: value)인 삭제)
 
     ```swift
+    // swift
     if let index = arr.firstIndex(of: 28) {
        arr.remove(at: index)
     }
@@ -193,6 +210,7 @@ struct Array<Element>
   - **lastIndex**(마지막 인덱스(배열의 크기 - 1)으로 부터 요소(of: value)인 삭제)
 
     ```swift
+    // swift
     if let index = arr.lastIndex(of: 15) {
        arr.remove(at: index)
     }
@@ -205,6 +223,7 @@ struct Array<Element>
 
   - **RemoveAll**(배열 전체 삭제)
     ```swift
+    // swift
     arr.removeAll()
     print(arr)
     // 배열 비우기(전체 Delete)
