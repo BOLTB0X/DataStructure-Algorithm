@@ -18,12 +18,13 @@ func lowerBound(_ arr: [Int], _ target: Int) -> Int {
     var end = arr.count
 
     while start < end {
-        let mid = (start + end) / 2
-        if arr[mid] < target {
-            start = mid + 1
-        } else {
-            end = mid
-        }
+      let mid = (start + end) / 2
+
+      if arr[mid] < target {
+        start = mid + 1
+      } else {
+        end = mid
+      }
     }
 
     return start
@@ -32,13 +33,13 @@ func lowerBound(_ arr: [Int], _ target: Int) -> Int {
 
 - 기본원리
 
-  1. 찾고자 하는 구간을 **[start, end(배열의 길이)]** 로 설정 구간 내의 중간 위치를 **mid**로 설정
-  2. **arr[mid] < target** 이면서 **arr[mid] >= target**을 만족하는 최소 mid을 찾기 위해 반복
-  3. **start >= end** 가 될 때 반복문이 중지되고 **start**
+  1. 찾고자 하는 구간을 **[`start`, `end`(배열의 길이)]** 로 설정 구간 내의 중간 위치를 `mid`로 설정
+  2. `arr[mid]` < `target` 이면서 `arr[mid] >= target`을 만족하는 최소 mid을 찾기 위해 반복
+  3. `start >= end` 가 될 때 반복문이 중지되고 `start`
      <br/>
 
 - 예시
-  arr = [1, 2, 2, 2, 3, 5, 7], target = 2
+  `arr = [1, 2, 2, 2, 3, 5, 7]`, `target = 2`
 
   <div style="text-align: center;">
   <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/LowerUpper%20Bound/png/%EB%A1%9C%EC%9A%B0%ED%95%98%EC%9D%B4%EB%B0%94%EC%9A%B4%EB%93%9C1.png?raw=true" alt="Example Image" width="70%">
@@ -76,6 +77,7 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
 
     while start < end {
         let mid = (start + end) / 2
+
         if arr[mid] <= target {
             start = mid + 1
         } else {
@@ -91,13 +93,13 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
 
 - 기본원리
 
-  1. 찾고자 하는 구간을 **[start, end(배열의 길이)]** 로 설정 구간 내의 중간 위치를 **mid**로 설정
-  2. **arr[mid-1] <= target** 이면서 **arr[mid] > target**을 만족하는 최소 mid을 찾기 위해 반복
-  3. **start >= end** 가 될 때 반복문이 중지되고 **start**
+  1. 찾고자 하는 구간을 **[`start`, `end`(배열의 길이)]** 로 설정 구간 내의 중간 위치를 `mid`로 설정
+  2. `arr[mid-1] <= target` 이면서 `arr[mid] > target`을 만족하는 최소 mid을 찾기 위해 반복
+  3. `start >= end` 가 될 때 반복문이 중지되고 `start`
      <br/>
 
 - 예시
-  arr = [1, 2, 2, 2, 3, 5, 7], target = 2
+  `arr = [1, 2, 2, 2, 3, 5, 7]`, `target = 2`
 
     <div style="text-align: center;">
     <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/LowerUpper%20Bound/png/%EB%A1%9C%EC%9A%B0%ED%95%98%EC%9D%B4%EB%B0%94%EC%9A%B4%EB%93%9C1.png?raw=true" alt="Example Image" width="70%">
@@ -133,6 +135,8 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
 _start를 반환하는 것이 더 일반적_
 
 ## 연습문제
+
+- [BOJ-2512](https://www.acmicpc.net/problem/2512)
 
 - [BOJ-2632](https://www.acmicpc.net/problem/2632)
 
