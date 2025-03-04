@@ -85,6 +85,12 @@ print(solution(4, 7, [20, 15, 10, 17])) // 15
 print(solution(5, 20, [4, 42, 40, 26, 46])) // 36
 ```
 
+## 연습문제
+
+0. [BOJ-2805(나무 자르기)](https://www.acmicpc.net/problem/2805)
+1. [BOJ-2512(예산)](https://www.acmicpc.net/problem/2512)
+2. [BOJ-2343(기타 레슨)](https://www.acmicpc.net/problem/2343)
+
 ## 참고
 
 - [블로그 참조 - marades(이진탐색(Binary Search)와 파라메트릭서치(Parametric Search))](https://marades.tistory.com/7)
