@@ -111,12 +111,14 @@ _배열 A = [0, 1, 2, 3, 5, 7, 9, 10, 11, 13, 19, 22]에서 숫자 7을 찾는 �
 
 ## Next
 
-- Upper Bound
-- lower Bound
+- [Lower/Upper Bound](https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/LowerUpper%20Bound/README.md)
 
-## 연습하기 좋은 문제
+- [Parametric Search](https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Algorithm/Parametric%20Search/README.md)
 
-- [백준 - 10816(숫자 카드2)](https://www.acmicpc.net/problem/10816)
+## 연습 문제
+
+1. [BOJ-10816(숫자 카드2)](https://www.acmicpc.net/problem/10816)
+2. [BOJ-2110(공유기 설치)](https://www.acmicpc.net/problem/2110)
 
 ## 참고
 

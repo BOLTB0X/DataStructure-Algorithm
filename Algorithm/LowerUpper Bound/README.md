@@ -136,9 +136,9 @@ _start를 반환하는 것이 더 일반적_
 
 ## 연습문제
 
-- [BOJ-2512](https://www.acmicpc.net/problem/2512)
+1. [BOJ_12015(가장 긴 증가하는 부분 수열 2)](https://www.acmicpc.net/problem/12015)
 
-- [BOJ-2632](https://www.acmicpc.net/problem/2632)
+2. [BOJ-2632](https://www.acmicpc.net/problem/2632)
 
 ## 참고
 
