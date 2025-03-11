@@ -136,9 +136,11 @@ _start를 반환하는 것이 더 일반적_
 
 ## 연습문제
 
-1. [BOJ_12015(가장 긴 증가하는 부분 수열 2)](https://www.acmicpc.net/problem/12015)
+1. [BOJ-10816(숫자 카드 2)](https://www.acmicpc.net/problem/10816)
 
-2. [BOJ-2632](https://www.acmicpc.net/problem/2632)
+2. [BOJ-12015(가장 긴 증가하는 부분 수열 2)](https://www.acmicpc.net/problem/12015)
+
+3. [BOJ-2632(피자판대)](https://www.acmicpc.net/problem/2632)
 
 ## 참고
 
