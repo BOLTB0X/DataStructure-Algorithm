@@ -156,9 +156,11 @@ apple : 10
 
 ## 연습하기 좋은 문제
 
-- [고득점kit-완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+1. [BOJ-10816(숫자 카드2)](https://www.acmicpc.net/problem/10816)
 
-- [고득점kit-베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+2. [고득점kit-완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+
+3. [고득점kit-베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
 
 ## 참고
 
