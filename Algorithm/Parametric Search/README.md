@@ -90,8 +90,9 @@ print(solution(5, 20, [4, 42, 40, 26, 46])) // 36
 0. [BOJ-2805(나무 자르기)](https://www.acmicpc.net/problem/2805)
 1. [BOJ-2512(예산)](https://www.acmicpc.net/problem/2512)
 2. [BOJ-2343(기타 레슨)](https://www.acmicpc.net/problem/2343)
-3. [BOJ_6236(용돈 관리)](https://www.acmicpc.net/problem/6236)
-4. [BOJ_1654(랜선 자르기)](https://www.acmicpc.net/problem/1654)
+3. [BOJ-6236(용돈 관리)](https://www.acmicpc.net/problem/6236)
+4. [BOJ-1654(랜선 자르기)](https://www.acmicpc.net/problem/1654)
+5. [BOJ-7795(먹을 것인가 먹힐 것인가)](https://www.acmicpc.net/problem/7795)
 
 ## 참고
 
