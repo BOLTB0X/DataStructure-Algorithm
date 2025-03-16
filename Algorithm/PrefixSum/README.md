@@ -45,20 +45,6 @@
   print(prefixSum[R] - prefixSum[L - 1]) // 7
   ```
 
-- **0-based index 사용 시**
-
-  ```
-  prefixSum[i] = prefixSum[i-1] + arr[i];
-  ```
-
-- **1-based index 사용 시**
-
-  ```
-  prefixSum[i] = prefixSum[i-1] + arr[i-1];
-  ```
-
-  <br/>
-
 ## 2차원 누적합 (2D Prefix Sum)
 
 - **기본 개념**
@@ -114,6 +100,8 @@
 4. [BOJ-16507(어두운 건 무서워)](https://www.acmicpc.net/problem/16507)
 
 5. [BOJ-19951(태상이의 훈련소 생활)](https://www.acmicpc.net/problem/19951)
+
+6. [프로그래머스-파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
 
 ## 참고
 
