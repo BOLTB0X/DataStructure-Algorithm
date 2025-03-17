@@ -87,6 +87,114 @@
 
   <br/>
 
+## 차분 배열 기법(Difference Array Technique)
+
+> 주로 누적합과 함께 사용되며, 배열의 연속적인 부분에 대한 업데이트를 빠르게 수행할 수 있도록 해준다
+
+1. **1차원**
+
+   - 특정 구간 `[s, e]` 에 `+val`을 한 번에 반영하기 위해 이용
+     - `arr[s] += val` (시작점 증가)
+     - `arr[e+1] -= val` (끝나는 다음 위치에서 감소)
+       <br/>
+   - 마지막에 누적합을 계산하여 반영된 변화를 적용
+
+   - 예제
+
+     ```swift
+     arr = [0, 0, 0, 0, 0] , s = 1, e = 3
+     ```
+
+     ```swift
+     // 1
+     arr[s] += 5
+     arr[e + 1] -= 5  // e+1 위치에서 감소
+     ```
+
+     ```swift
+     // 2
+     [0, +5, 0, 0, -5]
+     ```
+
+     ```swift
+     // 3
+     for i in 1..<arr.count {
+        arr[i] += arr[i-1]
+     }
+
+     // [0, 5, 5, 5, 0]
+     ```
+
+     <br/>
+
+2. **2차원**
+
+   - `(x1, y1)` ~ `(x2, y2)` 직사각형 영역에 적용
+
+     | 좌표         | 역할                        |
+     | ------------ | --------------------------- |
+     | (x1, y1)     | +val (왼쪽 상단에서 증가)   |
+     | (x1, y2+1)   | -val (오른쪽 상단에서 감소) |
+     | (x2+1, y1)   | -val (왼쪽 하단에서 감소)   |
+     | (x2+1, y2+1) | +val (보정)                 |
+
+      <br/>
+
+   - 예제 : `(1,1)` ~ `(3,3)` 에 `+5` 적용
+
+     ```swift
+     // 1
+     prefixSum[1][1] += 5     // 좌상단 시작점
+     prefixSum[1][3+1] -= 5   // 우상단 다음 열 감소
+     prefixSum[3+1][1] -= 5   // 좌하단 다음 행 감소
+     prefixSum[3+1][3+1] += 5 // 두 번 빠진 부분 보정
+     ```
+
+     ```
+     // 1 결과
+     0  0  0  0  0
+     0 +5  0  0  -5
+     0  0  0  0   0
+     0  0  0  0   0
+     0 -5  0  0  +5
+     ```
+
+     ```swift
+     // 2 가로 방향 누적합 적용
+     for i in board.indices {
+         for j in board[i].indices {
+             prefixSum[i][j+1] = prefixSum[i][j]
+         }
+     }
+     ```
+
+     ```swift
+     // 2
+     0  0  0  0  0
+     0 +5  +5  +5  0
+     0  0  0   0   0
+     0  0  0   0   0
+     0 -5 -5  -5  0
+     ```
+
+     ```swift
+     // 3 세로 방향 누적합 적용
+     for j in board[0].indices {
+         for i in board.indices {
+             prefixSum[i+1][j] = prefixSum[i][j]
+         }
+     }
+     ```
+
+     ```swift
+     // 3
+     0  0   0   0  0
+     0 +5  +5  +5  0
+     0 +5  +5  +5  0
+     0 +5  +5  +5  0
+     0  0   0   0  0
+     ```
+
 ## 연습문제
 
 0. [BOJ-11659(구간 합 구하기 4)](https://www.acmicpc.net/problem/11659) , [BOJ-11660(구간 합 구하기 5)](https://www.acmicpc.net/problem/11660)
@@ -105,6 +213,10 @@
 
 ## 참고
 
-- [블로그-참조(musclecode: 누적합(Prefix Sum / Cumulative Sum) 알고리즘)](https://ji-musclecode.tistory.com/38)
+- [블로그 참조 -(musclecode: 누적합(Prefix Sum / Cumulative Sum) 알고리즘)](https://ji-musclecode.tistory.com/38)
 
-- [블로그-참조(jow1025: 누적합(prefix sum)](https://jow1025.tistory.com/47)
+- [블로그 참조 - (jow1025: 누적합(prefix sum)](https://jow1025.tistory.com/47)
+
+- [블로그 참조 - PrefixSum +1-1 기법 또는 차분 배열 기법(Difference Array Technique)](https://jypark1111.tistory.com/201)
+
+- [블로그 참조 - PrefixSum +1-1 기법 또는 차분 배열](https://velog.io/@hyunsoo730/PrefixSum-1-1-%EA%B8%B0%EB%B2%95-%EB%98%90%EB%8A%94-%EC%B0%A8%EB%B6%84-%EB%B0%B0%EC%97%B4)
