@@ -163,7 +163,7 @@
      // 2 가로 방향 누적합 적용
      for i in board.indices {
          for j in board[i].indices {
-             prefixSum[i][j+1] = prefixSum[i][j]
+             prefixSum[i][j+1] += prefixSum[i][j]
          }
      }
      ```
@@ -181,7 +181,7 @@
      // 3 세로 방향 누적합 적용
      for j in board[0].indices {
          for i in board.indices {
-             prefixSum[i+1][j] = prefixSum[i][j]
+             prefixSum[i+1][j] += prefixSum[i][j]
          }
      }
      ```
