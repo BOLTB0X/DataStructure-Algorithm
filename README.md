@@ -34,7 +34,7 @@
 
 <p align="center">
 
-![과정이나 규칙](https://img.seoul.co.kr/img/upload/2023/01/02/SSI_20230102110220_O2.jpg)
+![과정이나 규칙](https://t1.daumcdn.net/cfile/cafe/9999A6445B1025E91C)
 
 </p>
 
