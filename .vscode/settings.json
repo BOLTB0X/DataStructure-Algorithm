@@ -65,6 +65,9 @@
     "typeinfo": "cpp",
     "unordered_map": "cpp",
     "variant": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "regex": "cpp"
   }
 }

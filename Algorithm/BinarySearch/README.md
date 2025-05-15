@@ -35,6 +35,24 @@ _배열 A = [0, 1, 2, 3, 5, 7, 9, 10, 11, 13, 19, 22]에서 숫자 7을 찾는 �
 
 - **Recursion**
 
+  ```cpp
+  int binary_Search(vector<int> arr, int target, int start, int end)
+  {
+      if (start > end)
+          return -1;
+
+      int mid = (start + end) / 2;
+
+      if (arr[mid] == target)
+          return mid;
+
+      if (arr[mid] > target)
+          return binary_Search(arr, target, start, mid - 1);
+    
+      return binary_Search(arr, target, mid + 1, end);
+  }
+  ```
+
   ```swift
   func binarySearch_Recursion<T: Comparable>(_ arr: [T], _ target: T, start: Int, end: Int) -> Int? {
       guard start <= end else {
@@ -72,6 +90,28 @@ _배열 A = [0, 1, 2, 3, 5, 7, 9, 10, 11, 13, 19, 22]에서 숫자 7을 찾는 �
 
 - **Loop**
 
+  ```cpp
+  int binary_Search(vector<int> arr, int target)
+  {
+      int start = 0, end = arr.size() - 1, mid = 0;
+    
+      while (start <= end)
+      {
+          mid = (start + end) / 2;
+
+          if (arr[mid] == target)
+              break;
+
+          if (arr[mid] > target)
+              end = mid - 1;
+          else if (arr[mid] < target)
+              start = mid + 1;
+      }
+
+      return mid;
+  }
+  ```
+
   ```swift
   func binarySearch_Loop<T: Comparable>(_ arr: [T], _ target: T, start: Int, end: Int) -> Int?
   {
@@ -98,7 +138,8 @@ _배열 A = [0, 1, 2, 3, 5, 7, 9, 10, 11, 13, 19, 22]에서 숫자 7을 찾는 �
   2. 찾을 값보다 현재 중간값이 작다면 **start = middle + 1**
   3. 찾을 값보다 현재 중간값이 크다면 **end = middle - 1**
   4. 이를 찾을 때까지 반복
-     <br/>
+
+     ---
 
   ```swift
   if let i = binarySearch_Loop(A, 7, start: 0, end: A.count - 1) {
@@ -108,6 +149,29 @@ _배열 A = [0, 1, 2, 3, 5, 7, 9, 10, 11, 13, 19, 22]에서 숫자 7을 찾는 �
       print("X")
   }
   ```
+
+## C++ STL 이용 - `binary_search()` 함수
+
+있다면 `true` , 없다면 `false` 반환
+
+- **parameter**
+
+   - 찾고자 하는 범위의 시작점
+   
+   - 찾고자 하는 범위의 끝점
+
+   - 칮고자하는 값
+
+   ---
+
+- **Code**
+
+   ```cpp
+   cout << binary_search(arr.begin(), arr.end(), 11) << '\n';
+   ```
+
+   ---
+
 
 ## Next
 

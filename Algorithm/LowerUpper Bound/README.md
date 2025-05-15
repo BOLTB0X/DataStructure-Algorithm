@@ -31,6 +31,11 @@ func lowerBound(_ arr: [Int], _ target: Int) -> Int {
 }
 ```
 
+```cpp
+// C++ STL
+lower_bound(범위 시작, 범위 끝, 타겟)
+```
+
 - 기본원리
 
   1. 찾고자 하는 구간을 **[`start`, `end`(배열의 길이)]** 로 설정 구간 내의 중간 위치를 `mid`로 설정
@@ -54,6 +59,11 @@ func lowerBound(_ arr: [Int], _ target: Int) -> Int {
 
   ```swift
   print(lowerBound(arr, 2)) // 1
+  ```
+
+  ```cpp
+  cout << "lower_bound(2) : " << lower_bound(arr.begin(), arr.end(), 2) - arr.begin() << '\n';
+	cout << "lower_bound(11) : " << lower_bound(arr.begin(), arr.end(), 11) - arr.begin() << '\n';
   ```
 
   <br/>
@@ -89,7 +99,11 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
 }
 ```
 
-<br/>
+```cpp
+// C++ STL
+upper_bound(범위 시작, 범위 끝, 타겟)
+```
+---
 
 - 기본원리
 
@@ -115,7 +129,12 @@ func upperBound(_ arr: [Int], _ target: Int) -> Int {
   print(upperBound(arr, 2)) // 4
   ```
 
-    <br/>
+  ```cpp
+  cout << "upper_bound(2) : " << upper_bound(arr.begin(), arr.end(), 2) - arr.begin() << '\n';
+	cout << "upper_bound(11) : " << upper_bound(arr.begin(), arr.end(), 11) - arr.begin() << '\n';
+  ```
+
+---
 
 - 시간복잡도
   ```
