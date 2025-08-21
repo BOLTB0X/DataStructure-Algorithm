@@ -21,7 +21,8 @@
   ```
 
   (단, `L = 0` 이면 `prefixSum[L - 1]` 을 0으로 처리)
-  <br/>
+
+  ---
 
 - **코드**
 
@@ -45,6 +46,8 @@
   print(prefixSum[R] - prefixSum[L - 1]) // 7
   ```
 
+  ---
+
 ## 2차원 누적합 (2D Prefix Sum)
 
 - **기본 개념**
@@ -61,7 +64,7 @@
   S(x1,y1,x2,y2) = prefixSum[x2][y2] - prefixSum[x1 - 1][y2] - prefixSum[x2][y1 - 1] + prefixSum[x1 - 1][y1 - 1]
   ```
 
-   <br/>
+  ---
 
 - **코드**
 
@@ -125,7 +128,7 @@
      // [0, 5, 5, 5, 0]
      ```
 
-     <br/>
+     ---
 
 2. **2차원**
 
@@ -195,6 +198,8 @@
      0  0   0   0  0
      ```
 
+---
+
 ## 연습문제
 
 0. [BOJ-11659(구간 합 구하기 4)](https://www.acmicpc.net/problem/11659) , [BOJ-11660(구간 합 구하기 5)](https://www.acmicpc.net/problem/11660)
@@ -210,6 +215,8 @@
 5. [BOJ-19951(태상이의 훈련소 생활)](https://www.acmicpc.net/problem/19951)
 
 6. [프로그래머스-파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
+
+---
 
 ## 참고
 
