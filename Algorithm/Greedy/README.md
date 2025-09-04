@@ -265,8 +265,6 @@ func solution(_ N: Int, _ rooms: [[Int]]) -> Int {
 
 - [Programmers - 체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862)
 
-- [Programmers - 큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
-
 ---
 
 ### 응용
@@ -275,15 +273,15 @@ func solution(_ N: Int, _ rooms: [[Int]]) -> Int {
 
 - [BOJ 1789 – 수들의 합](https://www.acmicpc.net/problem/1789)
 
-- [BOJ 1700 – 멀티탭 스케줄링](https://www.acmicpc.net/problem/1700)
-
 - [Programmers – 구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885)
 
 ---
 
 ### 실전
 
-- [BOJ 2812 - 크게 만들기](https://www.acmicpc.net/problem/2812)
+- [BOJ 1700 – 멀티탭 스케줄링](https://www.acmicpc.net/problem/1700)
+
+- [Programmers - 큰 수 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
 
 - [Leetcode - Candy](https://leetcode.com/problems/candy/description/?utm_source=chatgpt.com)
 
