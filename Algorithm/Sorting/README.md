@@ -217,6 +217,44 @@ void quickSort(vector<int> &v, int l, int r) {
 
 ---
 
+## 문제 List
+
+### 정형화
+
+- [백준 10989 – 수 정렬하기 3](https://www.acmicpc.net/problem/10989)
+
+- [백준 2108 – 통계학](https://www.acmicpc.net/problem/2108)
+
+- [프로그래머스 K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
+
+- [LeetCode 88 - Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
+
+---
+
+### 응용
+
+- [백준 11650 – 좌표 정렬하기](https://www.acmicpc.net/problem/11650)
+
+- [백준 1181 - 단어 정렬](https://www.acmicpc.net/problem/1181)
+
+- [Programmers - H-Index](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
+
+- [LeetCode 56 - Merge Intervals](https://leetcode.com/problems/merge-intervals/description/)
+
+---
+
+### 실전
+
+- [LeetCode 179. Largest Number](https://leetcode.com/problems/largest-number/description/)
+
+- [BOJ 10825 – 국영수](https://www.acmicpc.net/problem/10825)
+
+- [Programmers - 파일명 정렬](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
+
+- [LeetCode 973 - K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/description/)
+
+---
+
 ## 참고
 
 - [블로그 참고 - 기본 정렬알고리즘 정리(화투의 개발블로그)](https://hsp1116.tistory.com/33)
