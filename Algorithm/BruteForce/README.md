@@ -280,11 +280,6 @@ func solution(_ answers:[Int]) -> [Int] {
 
 - [BOJ 6064 – 카잉 달력](https://www.acmicpc.net/problem/6064)
 
-- [Programmers - 도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711)
-
-- [LeetCode 78 - Subsets](https://leetcode.com/problems/subsets/description/)
-
-
 ---
 
 ### 실전
