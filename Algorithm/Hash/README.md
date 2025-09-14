@@ -20,6 +20,8 @@
 - 충돌 해결 방법이 필요하며, 다양한 알고리즘과 보안 분야에서 널리 사용
   <br/>
 
+---
+
 ## Hash 자료구조
 
 > 각각의 문자(char), 문자열(String)에 대해서, 유일한 Key 값을 가지게 하며
@@ -63,9 +65,9 @@
   }
   ```
 
-  <br/>
+---
 
-## 예시 (직접 구현)
+## ex (직접 구현)
 
 ```cpp
 #include <iostream>
@@ -108,6 +110,8 @@ int main() {
 }
 ```
 
+---
+
 ## unordered_map (STL)
 
 > C++에서 `unordered_map` 은 해시 테이블을 기반으로 구현된 자료 구조, key - value 쌍을 저장하는 컨테이너
@@ -126,11 +130,12 @@ int main() {
   <br/>
 
 - **메모리 사용량**: 많은 메모리를 사용
-  <br/>
 
 - `#include <unordered_map>`
 
-## 예시
+---
+
+## ex
 
 ```cpp
 unordered_map<string, int> umap;
@@ -154,13 +159,18 @@ apple : 10
 
 순서 고려 X
 
-## 연습하기 좋은 문제
+---
 
-1. [BOJ-10816(숫자 카드2)](https://www.acmicpc.net/problem/10816)
+## 문제 List
 
-2. [고득점kit-완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+1. [BOJ 10816 - 숫자 카드2](https://www.acmicpc.net/problem/10816)
 
-3. [고득점kit-베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+2. [Programmer - 완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+
+3. [Programmer - 베스트 앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+
+---
+
 
 ## 참고
 
