@@ -96,7 +96,7 @@
 
   ```
 
-  <br/>
+---
 
 ## 차분 배열 기법(Difference Array Technique)
 
