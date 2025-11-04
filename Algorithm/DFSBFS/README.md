@@ -80,7 +80,7 @@ dfs(graph, &visited, 1)
 > * *“한 단계씩 바깥으로 퍼져나가는 탐색”*
 
 <p align="center">
-<img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Img/DFS.png?raw=true" alt="Example Image" width="70%"/>
+<img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Img/BFS.png?raw=true" alt="Example Image" width="70%"/>
 
 너비 방향으로 탐색을 확장하는 알고리즘
 
@@ -176,7 +176,36 @@ bfs(graph, 1) // 1 2 3 4 (방문 순서)
 | **DFS** | 한 경로를 끝까지 가므로 비효율적일 수 있음        | 도착까지의 경로 존재 여부 판별 가능 |
 | **BFS** | 한 칸씩 퍼지므로 최단거리(=이동 횟수)를 구할 수 있음 | 최단 거리 보장             |
 
+---
 
+## 문제
+
+### 정형화
+
+- [BOJ 2667 - 단지번호붙이기](https://www.acmicpc.net/problem/2667)
+
+- [BOJ 1697 - 숨바꼭질](https://www.acmicpc.net/problem/1697)
+
+- [Programmers - 단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+
+- [Programmers - 타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+
+
+### 응용
+
+- [BOJ 2206 - 벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)
+
+- [BOJ 7576 - 토마토](https://www.acmicpc.net/problem/7576)
+
+- [Programmers - 이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368)
+
+### 실전
+
+- [BOJ 11559 - Puyo Puyo](https://www.acmicpc.net/problem/11559)
+
+- [Programmers - 사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345)
+
+- [Programmers - 양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343)
 
 ## 참고
 
