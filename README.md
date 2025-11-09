@@ -41,17 +41,21 @@
 
   ---
 
-
 - [BruteForce](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/BruteForce)
 
 - [Sorting](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Sorting)
 
 - [Greedy](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Greedy)
 
-- [Binary Search](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/BinarySearch#binary-search%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89)
+- [Parametric Search](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Parametric%20Search#parametric-search)
+  
+  - [Binary Search](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/BinarySearch#binary-search%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89)
 
   - [Lowe Bound & Upper Bound](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/LowerUpper%20Bound#lower-bound--upper-bound)
-  - [Parametric Search](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Parametric%20Search#parametric-search)
+
+  ---
+
+- [DFS / BFS](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/DFSBFS)
 
 - [Backtracking](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/BackTracking)
 
@@ -62,3 +66,7 @@
 - [Two Pinter](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Two%20Pointer)
 
 - [Dynamic Programming](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/DP#dynamic-programming)
+
+- [Dijkstra](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Dijkstra)
+
+- [Floyd Warshall](https://github.com/BOLTB0X/DataStructure-Algorithm/tree/main/Algorithm/Floyd%20Warshall)
