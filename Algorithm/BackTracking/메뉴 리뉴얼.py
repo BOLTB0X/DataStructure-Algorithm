@@ -2,7 +2,6 @@ from itertools import combinations
 
 def solution(orders, course):
     answer = []
-    menu_type = sorted(set("".join(orders)))
     
     for cnt in course:
         candi = {}
