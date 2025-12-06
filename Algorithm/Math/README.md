@@ -115,7 +115,7 @@
    ```cpp
    int lcm(int a, int b)
    {
-       return (a * b) / lcm(a, b);
+       return (a * b) / gcd(a, b);
    }
    ```
 
