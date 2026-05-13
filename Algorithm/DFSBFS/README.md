@@ -42,6 +42,18 @@
 <p align="center">
 <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Img/%EC%98%88%EC%8B%9C.png?raw=true" alt="Example Image" width="50%"/>
 
+```cpp
+void dfs(vector<vector<int>> graph, vector<bool> &visited, int start) {
+    visited[start] = true;
+
+    for (const int& next: graph[start]) {
+        if (!visited[next]) {
+            dfs(graph, visited, next);
+        }
+    }
+}
+```
+
 ```swift
 func dfs(_ graph: [[Int]], _ visited: inout [Bool], _ start: Int) {
     visited[start] = true
@@ -117,6 +129,28 @@ dfs(graph, &visited, 1)
 <p align="center">
 <img src="https://github.com/BOLTB0X/DataStructure-Algorithm/blob/main/Img/%EC%98%88%EC%8B%9C.png?raw=true" alt="Example Image" width="50%"/>
 
+```cpp
+void bfs(vector<vector<int>> graph, int start) {
+    vector<bool> visited(graph.size(), false);
+
+    queue<int> que;
+
+    while (!que.empty()) {
+        int cur = que.front();
+        que.pop();
+
+        cout << cur << ' ';
+
+        for (const int& next: graph[cur]) {
+            if (!visited[next]) {
+                visited[next] = true;
+                que.push(next);
+            }
+        } 
+    }
+}
+```
+
 ```swift
 func bfs(_ graph: [[Int]], _ start: Int) {
     var visited = Array(repeating: false, count: graph.count)
@@ -182,9 +216,6 @@ bfs(graph, 1) // 1 2 3 4 (방문 순서)
 
 ### 정형화
 
-- [BOJ 2667 - 단지번호붙이기](https://www.acmicpc.net/problem/2667)
-
-- [BOJ 1697 - 숨바꼭질](https://www.acmicpc.net/problem/1697)
 
 - [Programmers - 단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
 
@@ -193,9 +224,9 @@ bfs(graph, 1) // 1 2 3 4 (방문 순서)
 
 ### 응용
 
-- [BOJ 2206 - 벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)
+- [정올 1840 - 치즈](https://jungol.co.kr/problem/1840)
 
-- [BOJ 7576 - 토마토](https://www.acmicpc.net/problem/7576)
+- [정올 1078 - 저글링 방사능 오염](https://jungol.co.kr/problem/1078)
 
 - [Programmers - 이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368)
 
