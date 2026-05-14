@@ -130,3 +130,46 @@
        return result;
    }
    ```
+
+   ---
+
+## 한칸 씩 밀기
+
+```cpp
+int r = 2; // 총 실행할 횟수
+int layers = min(n, m) / 2;
+
+for (int i = 0; i < layers; ++i) {
+    int top = i, left = i;
+    int bottom = n - 1 - i, right = m - 1 - i;
+
+    vector<int> border;
+
+    // 위
+    for (int j = left; j < right; ++j) border.push_back(board[top][j]);
+    // 우
+    for (int j = top; j < bottom; ++j) border.push_back(board[j][right]);
+    // 아래
+    for (int j = right; j > left; --j) border.push_back(board[bottom][j]);
+    // 좌
+    for (int j = bottom; j > top; --j) border.push_back(board[j][left]);
+
+    int size = border.size();
+    rotate(border.begin(), border.begin() + (r % size), border.end()); // 반시계
+    // rotate(border.begin(), border.begin() - (r % size), border.end()); // 시계
+    int idx = 0;
+
+    // 위
+    for (int j = left; j < right; ++j) border[top][j] = border[idx++];
+    // 우
+    for (int j = top; j < bottom; ++j) border[j][right] = border[idx++];
+    // 아래
+    for (int j = right; j > left; --j) border[bottom][j] = border[idx++];
+    // 좌
+    for (int j = bottom; j > top; --j) border[j][left] = border[idx++];
+}
+```
+
+## 문제
+
+- [정올 3206 - 숫자 소용돌이](https://jungol.co.kr/problem/3206)
