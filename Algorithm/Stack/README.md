@@ -205,13 +205,13 @@ var stack = Stack<Int>()
 
 - [프로그래머스 - 고득점 kit(기능개발)](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
 
-- [백준 - 10799(쇠막대기)](https://www.acmicpc.net/problem/10799)
+- [정올 2858 - 쇠막대기](https://jungol.co.kr/problem/2858)
 
-- [백준 - 1918(후위 표기식)](https://www.acmicpc.net/problem/1918)
+- [정올 1221 - 후위 표기식1](https://jungol.co.kr/problem/1221)
 
-- [백준 - 1874(스택 수열)](https://www.acmicpc.net/problem/1874)
+- [정올 5917 - 접시닦기](https://jungol.co.kr/problem/5917)
 
-- [백준 - 6198(옥상 정원 꾸미기)](https://www.acmicpc.net/problem/6198)
+- [정올 1328 - 빌딩](https://jungol.co.kr/problem/1328)
 
 ## 참고
 
