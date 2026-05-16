@@ -95,11 +95,9 @@ var queue = Queue<Int>()
 
 - [프로그래머스 - 고득점 kit(프로세스)](https://school.programmers.co.kr/learn/courses/30/lessons/42587)
 
-- [백준 - 1158(요세푸스 문제)](https://www.acmicpc.net/problem/1158)
+- [정올 3101 - 요세푸스 문제](https://jungol.co.kr/problem/3101)
 
-- [백준 - 5430(AC)](https://www.acmicpc.net/problem/5430)
-
-- [백준 - 2164(카드2)](https://www.acmicpc.net/problem/2164)
+- [정올  6057 - 피자왕 비룡](https://jungol.co.kr/problem/6057)
 
 ## 참고
 
