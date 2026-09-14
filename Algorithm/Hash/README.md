@@ -65,6 +65,10 @@
   }
   ```
 
+- 평균적으로 검색, 삽입, 삭제의 시간복잡도는 `O(1)`
+- 단, 충돌(Collision)이 많이 발생하면 최악의 경우 `O(n)`이 될 수 있음
+- Key와 Value를 한 쌍으로 관리하는 형태로 `unordered_map` 등이 사용됨
+  
 ---
 
 ## ex (직접 구현)
@@ -112,6 +116,45 @@ int main() {
 
 ---
 
+### Bucket
+
+Hash Table은 여러 개의 Bucket으로 구성
+
+**Key를 Hash Function에 전달하면 Hash Value가 생성되고, 이를 이용하여 데이터를 저장할 Bucket의 위치를 결정**
+
+```text
+Key
+ ↓
+Hash Function
+ ↓
+Hash Value
+ ↓
+Bucket Index
+ ↓
+Bucket
+```
+
+---
+
+### Collision
+
+서로 다른 Key가 Hash Function을 통해, 같은 Bucket을 가리키는 경우 Collision(충돌)이 발생
+
+```text
+"apple"  ── Hash ──> Bucket 3
+"orange" ── Hash ──> Bucket 3
+                         ↑
+                    Collision
+```
+
+따라서 Hash Table에서는 Collision을 해결하기 위한 방법이 필요, 대표적인 방법으로 다음이 과 같음
+
+- Separate Chaining
+- Open Addressing
+
+
+---
+
 ## unordered_map (STL)
 
 > C++에서 `unordered_map` 은 해시 테이블을 기반으로 구현된 자료 구조, key - value 쌍을 저장하는 컨테이너
@@ -132,6 +175,7 @@ int main() {
 - **메모리 사용량**: 많은 메모리를 사용
 
 - `#include <unordered_map>`
+
 
 ---
 
@@ -158,6 +202,79 @@ apple : 10
 ```
 
 순서 고려 X
+
+---
+
+### Iterator
+
+> STL에서 Iterator(반복자)는 컨테이너의 원소를 가리키고 순회하기 위한 객체이다.
+
+컨테이너마다 내부 구조가 다르기 때문에, Iterator를 통해 컨테이너의 원소를 일관된 방식으로 접근하고 순회할 수 있음
+
+```cpp
+std::unordered_map<std::string, int> umap;
+
+umap["apple"] = 10;
+umap["banana"] = 20;
+umap["orange"] = 30;
+
+for (auto it = umap.begin(); it != umap.end(); ++it)
+{
+    std::cout << it->first
+              << " : "
+              << it->second << '\n';
+}
+```
+```
+umap.begin()
+    ↓
+첫 번째 원소를 가리키는 Iterator
+
+umap.end()
+    ↓
+마지막 원소의 다음 위치를 나타내는 Iterator
+
+++it
+    ↓
+다음 원소로 이동
+
+중요한 건 `end()`가 마지막 원소를 가리키는 게 아니라 마지막 원소 다음 위치
+```
+
+`unordered_map`의 Iterator가 가리키는 원소는 `Key`와 `Value`의 `pair` 형태
+
+```cpp
+it->first
+```
+→ Key
+
+```cpp
+it->second
+```
+→ Value
+
+
+```text
+Iterator
+   ↓
+ pair<Key, Value>
+   ├── first  → Key
+   └── second → Value
+```
+
+---
+
+## unordered_map vs map
+
+| 항목 | `std::map` | `std::unordered_map` |
+|---|---|---|
+| 내부 구조 | Red-Black Tree 기반 | Hash Table 기반 |
+| 검색 | `O(log n)` | 평균 `O(1)` |
+| 삽입 | `O(log n)` | 평균 `O(1)` |
+| 삭제 | `O(log n)` | 평균 `O(1)` |
+| Key 정렬 | 정렬된 상태 유지 | 정렬 순서 보장 X |
+| 순회 순서 | Key 기준 정렬 순서 | 순서 보장 X |
+| 주요 장점 | 정렬된 데이터 접근 | 빠른 Key 기반 접근 |
 
 ---
 
