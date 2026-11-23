@@ -13,18 +13,29 @@
 
 > 배열은 고정된 크기의 연속된 메모리 공간에 저장되는 데이터 구조로, 인덱스를 통해 요소에 접근
 
-배열 내 각 요소는 고유한 인덱스(숫자로 나타냄)를 가지며, 이 인덱스를 사용하여 해당 요소에 접근하는 것
+**배열(Array)은 동일한 자료형의 데이터를 연속된 메모리 공간에 저장하고, 인덱스(Index)를 통해 각 요소에 접근하는 자료구조**
 
-```c
-// c
-int arr[5]
+```cpp
+int arr[5] = {10, 20, 30, 40, 50};
 ```
 
-```swift
-// swift
-@frozen
-struct Array<Element>
-```
+| 인덱스 | 값 | 메모리 주소 예시 |
+| :---: | :---: | :---: |
+| 0 | 10 | 1000 |
+| 1 | 20 | 1004 |
+| 2 | 30 | 1008 |
+| 3 | 40 | 1012 |
+| 4 | 50 | 1016 |
+
+$$
+Address(arr[i]) = BaseAddress + i \times sizeof(T)
+$$
+
+- BaseAddress: 배열의 시작 주소
+- `i`: 접근할 인덱스
+- `sizeof(T)`: 요소 하나의 크기
+
+---
 
 ## 특징
 
@@ -39,9 +50,10 @@ struct Array<Element>
 
 - **장점**
 
-  - 탐색에 유리
-    인덱스 기반 접근 덕분에 데이터를 빠르게 조회 가능
+  - 탐색에 유리: 인덱스 기반 접근 덕분에 데이터를 빠르게 조회 가능
     메모리가 연속적이라 접근 시간이 일정하고 효율적
+
+  - CPU가 데이터를 순차적으로 읽을 때 캐시 지역성(Cache Locality)을 활용하기 좋다는 장점
 
 - **단점**
 
@@ -76,47 +88,56 @@ struct Array<Element>
 
 - **Create/Init(생성)**
 
-  ```swift
-  // swift
-  var arr: [Int] = [38, 57, 50, 84, 28, 49, 80, 36, 82, 7, 7, 43, 12, 15, 38, 79]
-
-  print(arr)
-  // 배열 Create/Init
-  // [38, 57, 50, 84, 28, 49, 80, 36, 82, 7, 7, 43, 12, 15, 38, 79]
+  ```cpp
+  std::vector<int> arr = {10, 20, 30, 40, 50};
   ```
+
+  ```
+  10 20 15 30 40 50 60
+  ```
+
+  ```cpp
+  // 마지막에 요소 추가
+  arr.push_back(60);
+
+  // 특정 위치에 요소 삽입
+  arr.insert(arr.begin() + 2, 15);
+  ```
+
+  - `push_back()`: 마지막에 요소 추가
+
+  - `insert()`: 지정한 위치에 요소 삽입
 
   ---
 
 
 - **Read(읽기)**
 
-  ```swift
-  // swift
-  print("index 2인 요소: \(arr[2])")
-  //배열의 요소 index로 Read
-  //index 2인 요소: 50
+  ```cpp
+  // 인덱스를 통한 접근
+  std::cout << arr[2] << '\n';
 
-  for (index, element) in arr.enumerated() {
-      print("idenx: \(index), element: \(element)")
+  // 배열 전체 순회
+  for (int i = 0; i < arr.size(); ++i) {
+      std::cout << "index: " << i
+              << ", value: " << arr[i] << '\n';
   }
-  // 배열 전체 Read
-  //idenx: 0, element: 38
-  //idenx: 1, element: 57
-  //idenx: 2, element: 50
-  //idenx: 3, element: 84
-  //idenx: 4, element: 28
-  //idenx: 5, element: 49
-  //idenx: 6, element: 80
-  //idenx: 7, element: 36
-  //idenx: 8, element: 82
-  //idenx: 9, element: 7
-  //idenx: 10, element: 7
-  //idenx: 11, element: 43
-  //idenx: 12, element: 12
-  //idenx: 13, element: 15
-  //idenx: 14, element: 38
-  //idenx: 15, element: 79
+
+  // 범위 기반 for문
+  for (int value : arr) {
+      std::cout << value << '\n';
+  }
   ```
+
+
+  인덱스를 알고 있다면 직접 접근할 수 있고, 전체 요소를 순회 가능
+
+  ```cpp
+  // at
+  std::cout << arr.at(2) << '\n'; // 30
+  ```
+
+  *cf.* `std::vector::operator[]` *는 기본적으로 인덱스 범위를 검사하지 않아. 범위 검사가 필요한 경우* `at()` *을 사용할 수 있음*
 
   ---
 
@@ -147,92 +168,139 @@ struct Array<Element>
     ---
 
   - **Update**(요소 인덱스로 접근하여 수정)
-    ```swift
-    // swift
-    arr[1] = 15
-    print(arr)
-    // 배열 요소를(arr[1] = 15) 교체 (Update)
-    // [38, 57, 5, 50, 84, 28, 49, 80, 36, 82, 7, 7, 43, 12, 15, 38, 79, 60]
+    ```cpp
+    /// index 1의 값을 100으로 변경
+    arr[1] = 100;
     ```
+
+    기존 요소를 찾아서 교체하는 것이므로 인덱스를 알고 있다면 $O(1)$
 
     ---
 
 - **Delete**(삭제)
 
-  - **remove**(특정 위치 삭제)
+  - `pop_back()`
 
-    ```swift
-    // swift
-    arr.remove(at: 8)
-    print(arr)
-    //특정 인덱스 8의 요소 Delete
-    // [38, 15, 5, 50, 84, 28, 49, 80, 82, 7, 7, 43, 12, 15, 38, 79, 60]
+    ```cpp
+    // 마지막 요소 삭제
+    arr.pop_back();
     ```
 
-     <br/>
+  - `erase()` : 지정한 위치 또는 범위 삭제
 
-  - **removeLast**(마지막 요소 삭제)
-
-    ```swift
-    // swift
-    arr.removeLast()
-    print(arr)
-    // 배열의 마지막 요소 Delete
-    //[38, 15, 5, 50, 84, 28, 49, 80, 82, 7, 7, 43, 12, 15, 38, 79]
+    ```cpp
+    // index 2의 요소 삭제
+    // #include <algorithm> 헤더 필요
+    arr.erase(arr.begin() + 2);
     ```
 
-    ---
+  - `clear()` : 전체 요소 삭제
 
-  - **removeFirst**(배열의 첫번쨰 요소 삭제)
-
-    ```swift
-    // swift
-    arr.removeFirst()
-    print(arr)
-    // 배열의 첫번쨰 요소 Delete
-    // [15, 5, 50, 84, 28, 49, 80, 82, 7, 7, 43, 12, 15, 38, 79]
+    ```cpp
+    // 전체 요소 삭제
+    arr.clear();
     ```
 
-    ---
+- *etc.* `find()`: 특정 값 검색
 
-  - **firstIndex**(첫번쨰 인덱스(0)으로 부터 요소(of: value)인 삭제)
+    ```cpp
+    // 특정 값 검색 후 삭제
+    auto it = std::find(arr.begin(), arr.end(), 40);
 
-    ```swift
-    // swift
-    if let index = arr.firstIndex(of: 28) {
-       arr.remove(at: index)
+    if (it != arr.end()) {
+      arr.erase(it); 
     }
-    print(arr)
-    // 배열 내 특정 값 Delete
-    // [15, 5, 50, 84, 49, 80, 82, 7, 7, 43, 12, 15, 38, 79]
+
     ```
 
     ---
 
-  - **lastIndex**(마지막 인덱스(배열의 크기 - 1)으로 부터 요소(of: value)인 삭제)
+## 배열의 시간 복잡도
 
-    ```swift
-    // swift
-    if let index = arr.lastIndex(of: 15) {
-       arr.remove(at: index)
-    }
-    print(arr)
-    // 배열 내 특정 값 Delete
-    // [15, 5, 50, 84, 49, 80, 82, 7, 7, 43, 12, 38, 79]
+*배열은 어떤 작업을 하느냐에 따라 성능이 달라진다.*
+
+
+| 작업 | 시간 복잡도 | 이유 |
+| :--- | :--- | :--- |
+| 인덱스 접근 | `O(1)` | 주소 직접 계산 |
+| 값 검색 |`O(n)` | 최악의 경우 전체 탐색 |
+| 마지막 추가 | `O(1)` | 여유 공간이 있을 때 |
+| 중간 삽입 | `O(n)`| 기존 요소 이동 |
+| 마지막 삭제 | `O(1)` | 마지막 요소 제거 |
+| 중간 삭제 | `O(n)` | 뒤쪽 요소 이동 |
+| 전체 순회 | `O(n)` | 모든 요소 방문 |
+
+### 왜 중간 삽입은 $O(n)$ 일까?
+
+```mermaid
+flowchart TD
+    subgraph Before ["삽입 전 배열 (크기: 5)"]
+        direction LR
+        B0["[0]<br/>10"] --- B1["[1]<br/>20"] --- B2["[2]<br/>30"] --- B3["[3]<br/>40"] --- B4["[4]<br/>50"]
+    end
+
+    Step1["<b>인덱스 2에 15 삽입</b><br/>기존 30, 40, 50을 뒤로 한 칸씩 이동"]
+
+    subgraph After ["삽입 후 배열 (크기: 6)"]
+        direction LR
+        A0["[0]<br/>10"] --- A1["[1]<br/>20"] --- A2["[2]<br/><b>15</b>"] --- A3["[3]<br/>30"] --- A4["[4]<br/>40"] --- A5["[5]<br/>50"]
+    end
+
+    Before --> Step1 --> After
+
+    %% 새로 삽입된 요소 강조 스타일
+    style A2 fill:#ffeb3b,stroke:#fbc02d,stroke-width:2px,color:#000
+```
+
+인덱스 2에 새로운 요소를 삽입하려면 기존 요소들이 뒤로 이동해야 함
+
+데이터가 5개라면 최대 3개의 요소를 이동하고, 데이터가 1,000개라면 최대 999개를 이동할 수 있음
+
+즉 데이터 개수에 비례해 작업량이 증가하므로 $O(n)$
+
+---
+
+## 배열과 C++ STL의 관계
+
+1. C 스타일 배열 : 크기를 선언할 때 결정하는 기본 배열
+
+    ```c
+   int arr[5] = {1, 2, 3, 4, 5};
     ```
 
-    ---
+2. `std::array` **(고정 크기 STL)** : 고정 크기 배열을 STL 컨테이너의 형태로 제공
 
-  - **RemoveAll**(배열 전체 삭제)
-    ```swift
-    // swift
-    arr.removeAll()
-    print(arr)
-    // 배열 비우기(전체 Delete)
-    // []
+    ```cpp
+    #include <array>
+
+    std::array<int, 5> arr = {1, 2, 3, 4, 5};
     ```
 
-    ---
+3. `std::vector` **(동적 크기 STL)** : 실행 중 요소를 추가하거나 삭제할 수 있는 동적 배열
+
+    ```cpp
+    #include <vector>
+
+    std::vector<int> arr = {1, 2, 3, 4, 5};
+    arr.push_back(6);
+    ```
+
+    - `std::vector`도 배열 기반 자료구조
+
+    - 내부적으로 연속된 메모리 공간을 사용하고, 필요할 때 더 큰 메모리 공간을 확보해 기존 요소를 옮기는 방식으로 용량을 관리
+
+---
+
+## `size()`와 `capacity()`의 차이
+
+- `size()`: 현재 실제로 저장된 요소의 개수
+- `capacity()`: 재할당 없이 저장할 수 있는 요소의 최대 개수
+
+- `reserve()`: 용량 확보, size 변경 없음
+
+- `resize()`: 요소 개수 변경, 필요한 경우 용량도 변경
+
+---
 
 ## 바로 공부하기 좋은 알고리즘
 
